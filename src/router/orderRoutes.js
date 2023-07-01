@@ -14,14 +14,14 @@ router.get("/:reference", async (req, res) => {
   res.send({ status: "OK", data: order });
 });
 
-// router.post("/", async (req, res) => {
-//   const orderData = req.body;
+router.post("/", async (req, res) => {
+  const orderData = req.body;
 
-//   orderData.ref = (Math.random() + 1).toString(36).substring(7);
+  orderData.ref = (Math.random() + 1).toString(36).substring(7);
 
-//   const newOrder = await createOrder(orderData);
+  const newOrder = await createOrder(orderData);
 
-//   res.status(201).send({ status: "OK", data: newOrder });
-// });
+  res.status(201).send({ status: "OK", data: newOrder });
+});
 
 module.exports = router;
