@@ -8,15 +8,15 @@ router.get("/", async (req, res) => {
   res.send({ status: "OK", data: products });
 });
 
-// router.get("/:productId", async (req, res) => {
-//   const product = await getProduct(req.params.productId);
+router.get("/:productId", async (req, res) => {
+  const product = await getProduct(req.params.productId);
 
-//   if (!product) {
-//     res.status(404).send({ status: "FAILED", error: "Product not found" });
-//     return;
-//   }
+  if (!product) {
+    res.status(404).send({ status: "FAILED", error: "Product not found" });
+    return;
+  }
 
-//   res.send({ status: "OK", data: product });
-// });
+  res.send({ status: "OK", data: product });
+});
 
 module.exports = router;
