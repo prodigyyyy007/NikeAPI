@@ -1,14 +1,14 @@
 require("dotenv").config();
 const { MongoClient } = require("mongodb");
 
-const uri = process.env.DATABASE_URL;
+const DATABASE_URL = process.env.DATABASE_URL;
 
 let client;
 
 const getDB = () => {
   if (!client) {
     console.log("Creating a new client!");
-    client = new MongoClient(uri);
+    client = new MongoClient(DATABASE_URL);
   } else {
     console.log("Reusing the old client");
   }
